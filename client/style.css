@@ -1,0 +1,38 @@
+*, html {
+    font-family: 'Raleway', sans-serif;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+.header {
+    margin-top: 40vh;
+    text-align: center;
+}
+
+.input-url {
+    border-radius: 4px 0 0 4px;
+    width: 30em;
+    text-align: left;
+    border: 2px solid #EEEEEE;
+    background: #EEEEEE;
+    outline: none;
+}
+
+.input-url:focus {
+    border: 2px solid #0485ff;
+}
+
+.button-convert {
+    border-radius: 0 4px 4px 0;
+    border: 2px solid #0485ff;
+    background: #0485ff;
+    color: #fff;
+}
+
+.input-url, .button-convert {
+    font-size:1.3em;
+    padding:5px 10px;
+}
