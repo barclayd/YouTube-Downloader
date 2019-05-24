@@ -10,17 +10,37 @@
 </head>
 
 <body>
-    <!--[if lt IE 7]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
-    <h1 class="header">YouTube Downloader</h1>
-    <div class="container">
-        <label>
-            <input class="input-url" placeholder="https://www.youtube.com/watch?v=6aYzu1HXrrU">
-        </label>
-        <button
-        class="button-convert">Convert</button>
-    </div>
+        <div class="container">
+            <div>
+            <h1 class="header">YouTube Downloader</h1>
+            </div>
+
+            <div class="options">
+                <form>
+                <label>
+                    <strong>Conversion Type</strong>
+                </label>
+                <select class="input-audio-video">
+                    <option value="mp3">Audio only (No video)</option>
+                    <option value="video-only">Video only (No audio) </option>
+                    <option value="video&audio" selected>Video and Audio</option>
+                </select>
+                <label>
+                    <strong>Quality</strong>
+                </label>
+                <select class="quality">
+                    <option value="high" selected>High</option>
+                    <option value="low">Low</option>
+                </select>
+                </form>
+            </div>
+            <div class="input-button">
+            <label>
+                <input class="input-url" placeholder="https://www.youtube.com/watch?v=6aYzu1HXrrU">
+            </label>
+            <button class="button-convert">Convert</button>
+            </div>
+        </div>
     <script src="./script.js" async defer></script>
 </body>
 
