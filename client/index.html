@@ -12,7 +12,7 @@
 <body>
         <div class="container">
             <div>
-            <h1 class="header">YouTube Downloader</h1>
+            <h1 class="header">YouTube Downloader & Converter</h1>
             </div>
 
             <div class="options">
@@ -21,16 +21,16 @@
                     <strong>Conversion Type</strong>
                 </label>
                 <select class="input-audio-video" id="format">
-                    <option value="audio-only">Audio only (No video)</option>
-                    <option value="video-only">Video only (No audio) </option>
-                    <option value="video&audio" selected>Video and Audio</option>
+                    <option value="audio-only">MP3: Audio only (No video)</option>
+                    <option value="video-only">MP4: Video only (No audio) </option>
+                    <option value="video&audio" selected>MP4: Video and Audio</option>
                 </select>
                 <label>
                     <strong>Quality</strong>
                 </label>
                 <select id="quality">
-                    <option value="high" selected>High</option>
-                    <option value="low">Low</option>
+                    <option value="high" selected>Highest</option>
+                    <option value="low">Lowest</option>
                 </select>
                 </form>
             </div>
@@ -39,6 +39,9 @@
                 <input class="input-url" placeholder="https://www.youtube.com/watch?v=6aYzu1HXrrU">
             </label>
             <button class="button-convert">Convert</button>
+            </div>
+            <div class="status">
+                <h3 id="downloading"></h3>
             </div>
         </div>
     <script src="./script.js" async defer></script>

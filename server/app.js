@@ -7,18 +7,29 @@ const app = express();
 
 app.use(cors('*'));
 
-app.get('/download', async (req, res) => {
-  const { URL, downloadFormat, quality } = req.query;
+app.get('/check-download', async (req, res, next) => {
+  const { URL } = req.query;
   const {
     player_response: {
-      videoDetails: { title },
+      videoDetails: { title, author },
     },
   } = await ytdl.getBasicInfo(URL);
-  // res.json({ status: true, message: 'Success' });
+  res.json({
+    status: true,
+    title,
+    author,
+  });
+  next();
+});
+
+app.get('/download', async (req, res) => {
+  const {
+    URL, downloadFormat, quality, title,
+  } = req.query;
   if (downloadFormat === 'audio-only') {
-    res.header(
+    res.setHeader(
       'Content-Disposition',
-      `attachment; filename=${title.substring(0, 30)}.mp3`,
+      `attachment; filename=${title.substring(0, 40)}.mp3`,
     );
     ytdl(URL, {
       filter: format => format.container === 'm4a' && !format.encoding,

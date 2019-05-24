@@ -24,6 +24,10 @@ html {
   text-align: center;
 }
 
+#downloading {
+  color: #0485ff;
+}
+
 select {
   margin: 50px;
   width: 268px;
@@ -46,6 +50,10 @@ select {
   border: 2px solid #eeeeee;
   background: #eeeeee;
   outline: none;
+}
+
+.status {
+  padding: 2em;
 }
 
 .input-url:focus {
