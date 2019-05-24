@@ -1,21 +1,40 @@
 *, html {
     font-family: 'Raleway', sans-serif;
+    box-sizing: border-box;
 }
 
 .container {
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
+}
+
+.input-button {
+    flex-direction: row;
 }
 
 .header {
-    margin-top: 40vh;
     text-align: center;
+}
+
+select {
+    margin: 50px;
+    width: 268px;
+    padding: 5px;
+    font-size: 16px;
+    line-height: 1;
+    border: 0;
+    border-radius: 5px;
+    height: 34px;
+    background: url(http://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/br_down.png) no-repeat right #ddd;
+    -webkit-appearance: none;
+    background-position-x: 244px;
 }
 
 .input-url {
     border-radius: 4px 0 0 4px;
     width: 30em;
-    text-align: left;
     border: 2px solid #EEEEEE;
     background: #EEEEEE;
     outline: none;
@@ -33,6 +52,6 @@
 }
 
 .input-url, .button-convert {
-    font-size:1.3em;
-    padding:5px 10px;
+    font-size: 1.3em;
+    padding: 5px 10px;
 }
