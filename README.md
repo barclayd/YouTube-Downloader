@@ -2,6 +2,8 @@
 
 Download and convert any YouTube video to MP3 or MP4. Built using Vanilla JS and Node.js
 
+Deployed **[live](https://stormy-reaches-60483.herokuapp.com/)**
+
 ***N.b. Only to be used in accordance with YouTube's [terms of service](https://www.youtube.com/static?gl=GB&template=terms)***
 
 ### Code style
@@ -9,7 +11,7 @@ Download and convert any YouTube video to MP3 or MP4. Built using Vanilla JS and
     [![js-standard-style](https://img.shields.io/badge/deployed-heroku-blue.svg)](https://stormy-reaches-60483.herokuapp.com/)
     [![js-standard-style](https://img.shields.io/badge/deployed%20version-1.0.0-green.svg)](https://stormy-reaches-60483.herokuapp.com/)
 
-# Demo
+### Demo
 
 <p align="center">
     <img alt="Walkthrough" src='https://user-images.githubusercontent.com/39765499/58358323-52afbb80-7e76-11e9-87f6-af65bae7ca34.gif'>
@@ -18,12 +20,30 @@ Download and convert any YouTube video to MP3 or MP4. Built using Vanilla JS and
 
 </p>
 
-# Features
+### Features
 
-- [x] Select video and audio quality
+- [x] Select video/audio quality
 - [x] Select audio only (YouTube to MP3)
+- [x] Video with no audio option
 
-# Future Improvements
+### How to Run
+
+Instructions to run server:
+
+```
+$ git clone https://github.com/barclayd/YouTube-Downloader.git
+$ cd YouTube-Downloader && cd server
+$ npm start
+```
+
+After having run the server, to view the frontend:
+
+```
+$ cd .. && cd client
+$ open index.html
+```
+
+### Future Improvements
 
 * Configure format (e.g. flv, wmv)
 * Specify start and end times for video
