@@ -14,5 +14,15 @@ convertButton.addEventListener('click', () => {
 });
 
 const sendButton = (videoURL, format, quality) => {
-  window.location.href = `${serverURL}/download?URL=${videoURL}&downloadFormat=${format}&quality=${quality}`;
+  fetch(`${serverURL}/check-download?URL=${videoURL}`)
+      .then(response => {
+        return response.json();
+      })
+      .then(resData => {
+        const data = JSON.parse(JSON.stringify(resData));
+        if (data.status === true) {
+          document.getElementById("downloading").innerHTML = `Starting the download of ${data.title} by ${data.author}...`;
+          window.location.href = `${serverURL}/download?URL=${videoURL}&downloadFormat=${format}&quality=${quality}&title=${data.title}`;
+        }
+      });
 };
