@@ -1,57 +1,66 @@
-*, html {
-    font-family: 'Raleway', sans-serif;
-    box-sizing: border-box;
+*,
+html {
+  font-family: 'Raleway', sans-serif;
+  box-sizing: border-box;
 }
 
 .container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+}
+
+.options > select {
+  text-align: center;
 }
 
 .input-button {
-    flex-direction: row;
+  flex-direction: row;
 }
 
 .header {
-    text-align: center;
+  text-align: center;
 }
 
 select {
-    margin: 50px;
-    width: 268px;
-    padding: 5px;
-    font-size: 16px;
-    line-height: 1;
-    border: 0;
-    border-radius: 5px;
-    height: 34px;
-    background: url(http://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/br_down.png) no-repeat right #ddd;
-    -webkit-appearance: none;
-    background-position-x: 244px;
+  margin: 50px;
+  width: 268px;
+  padding: 5px;
+  font-size: 16px;
+  line-height: 1;
+  border: 0;
+  border-radius: 5px;
+  height: 34px;
+  background: url(http://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/br_down.png)
+    no-repeat right #ddd;
+  -webkit-appearance: none;
+  background-position-x: 244px;
+  text-align-last: center;
 }
 
 .input-url {
-    border-radius: 4px 0 0 4px;
-    width: 30em;
-    border: 2px solid #EEEEEE;
-    background: #EEEEEE;
-    outline: none;
+  border-radius: 4px 0 0 4px;
+  width: 30em;
+  border: 2px solid #eeeeee;
+  background: #eeeeee;
+  outline: none;
 }
 
 .input-url:focus {
-    border: 2px solid #0485ff;
+  border: 2px solid #0485ff;
 }
 
 .button-convert {
-    border-radius: 0 4px 4px 0;
-    border: 2px solid #0485ff;
-    background: #0485ff;
-    color: #fff;
+  border-radius: 0 4px 4px 0;
+  border: 2px solid #0485ff;
+  background: #0485ff;
+  color: #fff;
 }
 
-.input-url, .button-convert {
-    font-size: 1.3em;
-    padding: 5px 10px;
+.input-url,
+.button-convert {
+  font-size: 1.3em;
+  padding: 5px 10px;
 }
