@@ -2,7 +2,7 @@
 
 Download and convert any YouTube video to MP3 or MP4. Built using Vanilla JS and Node.js
 
-Deployed **[live](https://stormy-reaches-60483.herokuapp.com/)**
+Deployed **[live](https://convert-and-download-yt.herokuapp.com/)**
 
 ***N.b. Only to be used in accordance with YouTube's [terms of service](https://www.youtube.com/static?gl=GB&template=terms)***
 
