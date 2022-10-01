@@ -4,6 +4,7 @@ import cors from 'cors';
 import fetch from 'node-fetch';
 import ytdl from 'ytdl-core';
 import express from 'express';
+import Ffmpeg from 'fluent-ffmpeg';
 
 const app = express();
 
@@ -115,18 +116,23 @@ app.get('/search', async (req, res, next) => {
 app.get('/download', async (req, res) => {
   try {
     const { URL, downloadFormat, quality, title } = req.query;
-
-    if (downloadFormat === 'audio-only') {
+    if (downloadFormat === 'audioonly') {
       res.setHeader('Content-Disposition', `attachment; filename=${title.substring(0, 40)}.mp3`);
-      ytdl(URL, {
-        filter: (format) => format.container === 'm4a' && !format.encoding,
-        quality: quality === 'high' ? 'highest' : 'lowest',
-      }).pipe(res);
+      const stream = ytdl(URL, {
+        filter: (format) => {
+          console.log(JSON.stringify(format));
+          return format.container === 'webm' && format.hasAudio && !format.hasVideo;
+        },
+      });
+      const proc = new Ffmpeg({ source: stream });
+      proc.setFfmpegPath('/opt/homebrew/bin/ffmpeg');
+      proc.withAudioCodec('libmp3lame').toFormat('mp3').output(res).run();
     } else {
       res.header('Content-Disposition', `attachment; filename="${title.substring(0, 25)}.mp4"`);
       ytdl(URL, {
-        filter: downloadFormat === 'video-only' ? 'videoonly' : 'audioandvideo',
-        quality: quality === 'high' ? 'highestvideo' : 'lowestvideo',
+        filter: downloadFormat,
+        quality,
+        // format: downloadFormat,
       }).pipe(res);
     }
   } catch (e) {
