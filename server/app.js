@@ -94,7 +94,7 @@ app.get('/search', async (req, res, next) => {
       },
       query: req.query.query,
       webSearchboxStatsUrl:
-        '/search?oq=bi tek ben anlarım&gs_l=youtube.12...0.0.2.15342.0.0.0.0.0.0.0.0..0.0.qsslwc,ytpo-bo-me=0,ytposo-bo-me=0,ytpo-bo-ei=45358230,ytposo-bo-ei=45358230,cfro=1,ytpo-bo-me=1,ytposo-bo-me=1,ytpo-bo-ei=45379428,ytposo-bo-ei=45379428.1..0...1ac..64.youtube..0.0.0....0.FxzHpXryUjg',
+        '/search?oq=bi tek ben anlarim&gs_l=youtube.12...0.0.2.15342.0.0.0.0.0.0.0.0..0.0.qsslwc,ytpo-bo-me=0,ytposo-bo-me=0,ytpo-bo-ei=45358230,ytposo-bo-ei=45358230,cfro=1,ytpo-bo-me=1,ytposo-bo-me=1,ytpo-bo-ei=45379428,ytposo-bo-ei=45379428.1..0...1ac..64.youtube..0.0.0....0.FxzHpXryUjg',
     };
 
     const searchResponse = await fetch('https://www.youtube.com/youtubei/v1/search?key=AIzaSyAO_FJ2SlqU8Q4STEHLGCilw_Y9_11qcW8&prettyPrint=false', {
@@ -125,7 +125,7 @@ app.get('/download', async (req, res) => {
         },
       });
       const proc = new Ffmpeg({ source: stream });
-      proc.setFfmpegPath('/opt/homebrew/bin/ffmpeg');
+      proc.setFfmpegPath('/usr/bin/ffmpeg');
       proc.withAudioCodec('libmp3lame').toFormat('mp3').output(res).run();
     } else {
       res.header('Content-Disposition', `attachment; filename="${title.substring(0, 25)}.mp4"`);
