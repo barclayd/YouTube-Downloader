@@ -11,8 +11,11 @@
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.17.0",
-    "ytdl-core": "^2.0.1"
+    "fluent-ffmpeg": "^2.1.2",
+    "node-fetch": "^3.2.10",
+    "ytdl-core": "^4.8.2"
   },
+  "type": "module",
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.7.0",
